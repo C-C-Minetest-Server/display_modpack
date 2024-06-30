@@ -283,12 +283,10 @@ function display_api.register_display_entity(entity_name)
 				visual = "upright_sprite",
 				textures = {},
 				collide_with_objects = false,
-				pointable = false
+				pointable = false,
+				static_save = false,
 			},
 			on_activate = display_api.on_activate,
-			get_staticdata = function(self)
-				return minetest.serialize({ nodepos = self.nodepos })
-			end,
 			on_blast = function(self, damage)
 				return false, false, {}
 			end,
